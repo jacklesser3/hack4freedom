@@ -295,9 +295,9 @@
 
         .hero-content h1 {
             font-family: 'Orbitron', 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-size: clamp(1.8rem, 6vw, 5.5rem);
             font-weight: 900;
-            margin-bottom: 30px;
+            margin-bottom: clamp(15px, 3vw, 30px);
             line-height: 1.1;
             background: linear-gradient(135deg, var(--neon-cyan), var(--electric-blue), var(--neon-purple));
             -webkit-background-clip: text;
@@ -317,8 +317,8 @@
         }
 
         .hero-content p {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            margin-bottom: 50px;
+            font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+            margin-bottom: clamp(15px, 3vw, 50px);
             font-weight: 400;
             color: var(--light-text);
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -334,14 +334,14 @@
         .hero-cta {
             background: linear-gradient(135deg, var(--neon-cyan), var(--electric-blue));
             color: var(--darker-bg);
-            padding: clamp(16px, 4vw, 20px) clamp(40px, 8vw, 50px);
+            padding: clamp(14px, 3vw, 20px) clamp(35px, 7vw, 50px);
             border-radius: 8px;
             text-decoration: none;
             font-weight: 800;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: clamp(0.9rem, 2.2vw, 1.2rem);
             transition: all 0.3s ease;
             display: inline-block;
-            margin: 10px;
+            margin: clamp(5px, 1vw, 10px);
             border: 2px solid transparent;
             box-shadow: 0 0 30px var(--glow-cyan), inset 0 0 20px rgba(255, 255, 255, 0.1);
             position: relative;
@@ -646,24 +646,48 @@
             }
             
             .hero {
-                padding-top: 80px;
+                padding-top: 60px;
+                padding-bottom: 40px;
                 padding-left: 0;
                 padding-right: 0;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 width: 100%;
                 margin: 0;
+                min-height: auto;
+            }
+            
+            .sponsor-section {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 40px;
+                padding: 20px;
+                width: 100%;
+            }
+            
+            .sponsor-line {
+                flex-direction: column;
+                gap: 20px;
             }
 
             .hero-content {
-                padding: 0 clamp(15px, 4vw, 20px);
+                padding: 0 clamp(20px, 5vw, 40px);
                 width: 100%;
                 max-width: 100%;
                 margin: 0 auto;
                 left: 0;
                 right: 0;
                 position: relative;
+            }
+            
+            .hero-content h1 {
+                font-size: clamp(1.8rem, 5.5vw, 3.5rem);
+                line-height: 1;
+                margin-bottom: clamp(15px, 2.5vw, 25px);
             }
             
             .hero-content h1 {
@@ -704,8 +728,11 @@
             .sponsor-section {
                 position: relative;
                 bottom: auto;
+                left: auto;
+                transform: none;
                 margin-top: 40px;
                 padding: 20px;
+                width: 100%;
             }
 
             .sponsor-line {
@@ -742,18 +769,36 @@
             }
             
             .hero {
-                padding-top: 70px;
+                padding-top: 50px;
+                padding-bottom: 30px;
                 padding-left: 0;
                 padding-right: 0;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 width: 100%;
                 margin: 0;
+                min-height: auto;
+            }
+            
+            .sponsor-section {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 30px;
+                padding: 15px;
+                width: 100%;
+            }
+            
+            .sponsor-line {
+                flex-direction: column;
+                gap: 15px;
             }
 
             .hero-content {
-                padding: 0 clamp(10px, 3vw, 15px);
+                padding: 0 clamp(15px, 4vw, 20px);
                 width: 100%;
                 max-width: 100%;
                 margin: 0 auto;
@@ -763,6 +808,9 @@
             }
             
             .hero-content h1 {
+                font-size: clamp(1.6rem, 5vw, 2.5rem);
+                line-height: 1;
+                margin-bottom: clamp(12px, 2vw, 20px);
                 padding: 0;
                 width: 100%;
                 max-width: 100%;
@@ -906,9 +954,9 @@
     <div class="hero" id="top">
         <div class="hero-content">
             <h1>HACK4FREEDOM</h1>
-            <p style="font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 20px; font-weight: 600;">Austin, TX</p>
-            <p style="font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 20px; font-weight: 600;">January 17 & 18, 2026</p>
-            <p style="font-size: clamp(1.1rem, 3.5vw, 1.8rem); margin-bottom: 50px; font-weight: 600; color: var(--neon-cyan);">Total Prize Pool: 1 Bitcoin</p>
+            <p style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: clamp(10px, 2vw, 20px); font-weight: 600;">Austin, TX</p>
+            <p style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: clamp(10px, 2vw, 20px); font-weight: 600;">January 17 & 18, 2026</p>
+            <p style="font-size: clamp(0.95rem, 2.8vw, 1.8rem); margin-bottom: clamp(20px, 4vw, 50px); font-weight: 600; color: var(--neon-cyan);">Total Prize Pool: 1 Bitcoin</p>
             <div>
                 <a href="https://form.typeform.com/to/JpP6QSgD" target="_blank" rel="noopener noreferrer" class="hero-cta">APPLY NOW</a>
             </div>
