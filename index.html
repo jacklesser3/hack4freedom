@@ -25,6 +25,10 @@
         
         html {
             scroll-behavior: smooth;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
         * {
@@ -274,6 +278,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            left: 0;
+            right: 0;
         }
 
         @keyframes fadeInUp {
@@ -643,6 +649,11 @@
                 padding-top: 80px;
                 padding-left: 0;
                 padding-right: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin: 0;
             }
 
             .hero-content {
@@ -650,6 +661,9 @@
                 width: 100%;
                 max-width: 100%;
                 margin: 0 auto;
+                left: 0;
+                right: 0;
+                position: relative;
             }
             
             .hero-content h1 {
@@ -731,6 +745,11 @@
                 padding-top: 70px;
                 padding-left: 0;
                 padding-right: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin: 0;
             }
 
             .hero-content {
@@ -738,6 +757,9 @@
                 width: 100%;
                 max-width: 100%;
                 margin: 0 auto;
+                left: 0;
+                right: 0;
+                position: relative;
             }
             
             .hero-content h1 {
@@ -884,9 +906,9 @@
     <div class="hero" id="top">
         <div class="hero-content">
             <h1>HACK4FREEDOM</h1>
-            <p style="font-size: 2rem; margin-bottom: 20px; font-weight: 600;">Austin, TX</p>
-            <p style="font-size: 2rem; margin-bottom: 20px; font-weight: 600;">January 17 & 18, 2026</p>
-            <p style="font-size: 1.8rem; margin-bottom: 50px; font-weight: 600; color: var(--neon-cyan);">Total Prize Pool: 1 Bitcoin</p>
+            <p style="font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 20px; font-weight: 600;">Austin, TX</p>
+            <p style="font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 20px; font-weight: 600;">January 17 & 18, 2026</p>
+            <p style="font-size: clamp(1.1rem, 3.5vw, 1.8rem); margin-bottom: 50px; font-weight: 600; color: var(--neon-cyan);">Total Prize Pool: 1 Bitcoin</p>
             <div>
                 <a href="https://form.typeform.com/to/JpP6QSgD" target="_blank" rel="noopener noreferrer" class="hero-cta">APPLY NOW</a>
             </div>
