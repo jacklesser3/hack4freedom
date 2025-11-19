@@ -163,6 +163,41 @@
             background: rgba(0, 243, 255, 0.1);
         }
 
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--neon-cyan);
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            box-shadow: 0 0 5px var(--glow-cyan);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         .hero {
             background: transparent;
             min-height: 100vh;
@@ -172,6 +207,7 @@
             position: relative;
             padding: 80px 0;
             overflow: hidden;
+            padding-top: 100px;
         }
 
         .hero::before {
@@ -533,10 +569,58 @@
         }
 
         @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar-content {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 80px;
+                gap: 30px;
+                transition: left 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .navbar-content.active {
+                left: 0;
+            }
+
+            .navbar-content a {
+                font-size: 1.2rem;
+                padding: 15px 30px;
+                width: 80%;
+                text-align: center;
+                border: 1px solid rgba(0, 243, 255, 0.2);
+                border-radius: 8px;
+            }
+
+            .navbar-content a:hover {
+                background: rgba(0, 243, 255, 0.15);
+                border-color: var(--neon-cyan);
+            }
+
             .container {
                 padding: 0 20px;
             }
             
+            .hero {
+                padding-top: 80px;
+            }
+
             .hero-content {
                 padding: 0 40px;
             }
@@ -572,35 +656,74 @@
             .how-it-works-card {
                 padding: 30px;
             }
+
+            .sponsor-section {
+                position: relative;
+                bottom: auto;
+                margin-top: 40px;
+                padding: 20px;
+            }
+
+            .sponsor-line {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
 
         @media (max-width: 480px) {
+            .navbar {
+                padding: 12px 0;
+            }
+
+            .hamburger {
+                right: 15px;
+            }
+
+            .hamburger span {
+                width: 24px;
+                height: 2.5px;
+            }
+
+            .navbar-content {
+                padding-top: 70px;
+            }
+
+            .navbar-content a {
+                font-size: 1.1rem;
+                padding: 12px 25px;
+            }
+
             .container {
                 padding: 0 16px;
             }
             
+            .hero {
+                padding-top: 70px;
+            }
+
             .hero-content {
-                padding: 0 30px;
+                padding: 0 20px;
             }
             
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
                 padding: 0 10px;
             }
             
             .hero-content p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .hero-cta {
                 display: block;
                 margin: 10px auto;
                 width: fit-content;
+                padding: 16px 40px;
+                font-size: 1rem;
             }
 
             .sponsor-section {
-                bottom: 40px;
-                padding: 0 20px;
+                padding: 15px;
             }
 
             .sponsor-line {
@@ -609,20 +732,68 @@
             }
 
             .sponsor-logo {
-                height: 40px;
+                height: 35px;
             }
 
             .sponsor-text {
                 font-size: 0.85rem;
             }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .info-content h2,
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .how-it-works-card {
+                padding: 25px;
+            }
+
+            .how-it-works-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .how-it-works-card p {
+                font-size: 1rem;
+            }
         }
     </style>
     <script>
-        // Smooth scroll with offset for fixed navbar
+        // Smooth scroll with offset for fixed navbar and hamburger menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.querySelector('.navbar');
             const navbarHeight = navbar ? navbar.offsetHeight : 0;
             const offset = navbarHeight + 20; // Add 20px extra padding
+            const hamburger = document.getElementById('hamburger');
+            const navbarContent = document.getElementById('navbarContent');
+
+            // Hamburger menu toggle
+            if (hamburger && navbarContent) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navbarContent.classList.toggle('active');
+                });
+
+                // Close menu when clicking on a link
+                const navLinks = navbarContent.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navbarContent.classList.remove('active');
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!navbar.contains(e.target) && navbarContent.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navbarContent.classList.remove('active');
+                    }
+                });
+            }
 
             // Handle all anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -656,7 +827,12 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-content">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="navbar-content" id="navbarContent">
             <a href="#top">Home</a>
             <a href="#info">Build the Future</a>
             <a href="#expect">What to Expect</a>
