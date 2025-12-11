@@ -77,10 +77,9 @@
         }
 
         .sponsor-section {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            left: 0;
+            transform: none;
             z-index: 3;
             text-align: center;
             opacity: 1;
@@ -88,6 +87,7 @@
             width: 100%;
             max-width: 1400px;
             padding: 0 30px;
+            margin-top: auto;
         }
 
         .sponsor-line {
@@ -118,14 +118,14 @@
         }
 
         .sponsor-logo {
-            height: 50px;
+            height: clamp(35px, 4vw, 40px);
             width: auto;
             opacity: 1;
             filter: brightness(1);
         }
 
         .sponsor-text {
-            font-size: 1rem;
+            font-size: clamp(0.85rem, 1.5vw, 0.9rem);
             color: var(--light-text);
             opacity: 1;
             text-transform: lowercase;
@@ -211,12 +211,14 @@
             background: transparent;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             position: relative;
-            padding: 80px 0;
+            padding: 0;
             overflow: hidden;
-            padding-top: 100px;
+            padding-top: clamp(95px, 12vh, 115px);
+            padding-bottom: clamp(30px, 5vh, 50px);
             width: 100%;
             box-sizing: border-box;
         }
@@ -277,9 +279,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             left: 0;
             right: 0;
+            padding-top: clamp(20px, 4vh, 40px);
         }
 
         @keyframes fadeInUp {
@@ -297,7 +300,7 @@
             font-family: 'Orbitron', 'Montserrat', sans-serif;
             font-size: clamp(1.8rem, 6vw, 5.5rem);
             font-weight: 900;
-            margin-bottom: clamp(15px, 3vw, 30px);
+            margin-bottom: clamp(20px, 4vh, 35px);
             line-height: 1.1;
             background: linear-gradient(135deg, var(--neon-cyan), var(--electric-blue), var(--neon-purple));
             -webkit-background-clip: text;
@@ -334,11 +337,11 @@
         .hero-cta {
             background: linear-gradient(135deg, var(--neon-cyan), var(--electric-blue));
             color: var(--darker-bg);
-            padding: clamp(14px, 3vw, 20px) clamp(35px, 7vw, 50px);
+            padding: clamp(12px, 2.5vw, 16px) clamp(28px, 6vw, 40px);
             border-radius: 8px;
             text-decoration: none;
             font-weight: 800;
-            font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+            font-size: clamp(0.85rem, 1.8vw, 1rem);
             transition: all 0.3s ease;
             display: inline-block;
             margin: clamp(5px, 1vw, 10px);
@@ -662,7 +665,7 @@
             }
             
             .hero {
-                padding-top: 60px;
+                padding-top: clamp(80px, 12vh, 100px);
                 padding-bottom: 40px;
                 padding-left: 0;
                 padding-right: 0;
@@ -785,7 +788,7 @@
             }
             
             .hero {
-                padding-top: 50px;
+                padding-top: clamp(70px, 10vh, 90px);
                 padding-bottom: 30px;
                 padding-left: 0;
                 padding-right: 0;
@@ -857,7 +860,7 @@
             }
 
             .sponsor-logo {
-                height: 35px;
+                height: clamp(30px, 5vw, 35px);
             }
 
             .sponsor-text {
@@ -970,10 +973,10 @@
     <div class="hero" id="top">
         <div class="hero-content">
             <h1>AI HACK FOR FREEDOM</h1>
-            <p style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: clamp(10px, 2vw, 20px); font-weight: 600;">Austin, TX</p>
-            <p style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: clamp(10px, 2vw, 20px); font-weight: 600;">January 17 & 18, 2026</p>
-            <p style="font-size: clamp(0.95rem, 2.8vw, 1.8rem); margin-bottom: clamp(20px, 4vw, 50px); font-weight: 600; color: var(--neon-cyan);">Total Prize Pool: 1 Bitcoin</p>
-            <div>
+            <p style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: clamp(15px, 3vh, 25px); font-weight: 600;">Austin, TX</p>
+            <p style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: clamp(15px, 3vh, 25px); font-weight: 600;">January 17 & 18, 2026</p>
+            <p style="font-size: clamp(0.95rem, 2.8vw, 1.8rem); margin-bottom: clamp(25px, 5vh, 40px); font-weight: 600; color: var(--neon-cyan);">Total Prize Pool: 1 Bitcoin</p>
+            <div style="margin-bottom: clamp(30px, 6vh, 50px);">
                 <a href="https://form.typeform.com/to/JpP6QSgD" target="_blank" rel="noopener noreferrer" class="hero-cta">APPLY NOW</a>
             </div>
         </div>
