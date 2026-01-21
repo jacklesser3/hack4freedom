@@ -373,6 +373,28 @@
             border-color: var(--neon-cyan);
         }
 
+        .hero-cta.disabled,
+        .cta-button.disabled {
+            background: linear-gradient(135deg, #666, #888);
+            color: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+            opacity: 0.6;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta.disabled::before,
+        .cta-button.disabled::before {
+            display: none;
+        }
+
+        .hero-cta.disabled:hover,
+        .cta-button.disabled:hover {
+            transform: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-color: transparent;
+        }
+
         .images-section {
             padding: 60px 0;
             background: rgba(15, 15, 26, 0.15);
@@ -965,7 +987,6 @@
             <a href="#info">Build the Future</a>
             <a href="#expect">What to Expect</a>
             <a href="#how-it-works">How It Works</a>
-            <a href="https://form.typeform.com/to/JpP6QSgD" target="_blank" rel="noopener noreferrer">Apply</a>
         </div>
     </nav>
 
@@ -976,8 +997,7 @@
             <p style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: clamp(8px, 1.5vh, 12px); font-weight: 600;">January 17 & 18, 2026</p>
             <p style="font-size: clamp(0.95rem, 2.8vw, 1.8rem); margin-bottom: clamp(12px, 2vh, 18px); font-weight: 600; color: var(--neon-cyan);">Total Prize Pool: 1 Bitcoin</p>
             <div style="margin-bottom: clamp(10px, 2vh, 20px);">
-                <a href="https://form.typeform.com/to/JpP6QSgD" target="_blank" rel="noopener noreferrer" class="hero-cta">APPLY NOW</a>
-                <p style="font-size: clamp(0.7rem, 1.6vw, 0.9rem); margin-top: clamp(8px, 1.5vh, 12px); font-weight: 400; color: var(--light-text); font-style: italic; opacity: 0.9;">Applications are due by December 29, 2025. Applicants will be informed by January 2, 2026.</p>
+                <span class="hero-cta disabled">CLOSED</span>
             </div>
         </div>
         <div class="sponsor-section">
@@ -1054,8 +1074,7 @@
                 <h2>READY TO HACK?</h2>
                 <p>Don't miss out on this incredible opportunity to build the future of freedom technology.</p>
                 <div style="margin-bottom: clamp(5px, 1vh, 10px);">
-                    <a href="https://form.typeform.com/to/JpP6QSgD" target="_blank" rel="noopener noreferrer" class="cta-button">APPLY NOW</a>
-                    <p style="font-size: clamp(0.7rem, 1.6vw, 0.9rem); margin-top: clamp(10px, 1.8vh, 15px); font-weight: 400; color: var(--light-text); font-style: italic; opacity: 0.9;">Applications are due by December 29, 2025. Applicants will be informed by January 2, 2026.</p>
+                    <span class="cta-button disabled">CLOSED</span>
                 </div>
             </div>
         </div>
