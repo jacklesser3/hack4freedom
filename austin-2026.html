@@ -212,7 +212,9 @@
         }
 
         .event-badge {
-            display: inline-block;
+            position: absolute;
+            top: 90px;
+            left: 30px;
             background: var(--navy-blue);
             color: var(--chartreuse);
             padding: 8px 20px;
@@ -221,13 +223,13 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-bottom: 20px;
+            z-index: 10;
         }
 
         .hero-brandmark {
-            max-width: 200px;
+            max-width: 320px;
             height: auto;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             filter: drop-shadow(0 8px 30px rgba(30, 58, 95, 0.35));
         }
 
@@ -518,6 +520,17 @@
                 min-height: auto;
             }
 
+            .event-badge {
+                top: 75px;
+                left: 20px;
+                font-size: 0.8rem;
+                padding: 6px 14px;
+            }
+
+            .hero-brandmark {
+                max-width: 250px;
+            }
+
             .hero-content h1 {
                 font-size: 2.2rem;
             }
@@ -585,8 +598,15 @@
                 padding: 80px 0 40px;
             }
 
+            .event-badge {
+                top: 65px;
+                left: 16px;
+                font-size: 0.7rem;
+                padding: 5px 12px;
+            }
+
             .hero-brandmark {
-                max-width: 150px;
+                max-width: 200px;
             }
 
             .hero-content h1 {
@@ -680,8 +700,8 @@
     </nav>
 
     <div class="page-hero">
+        <span class="event-badge">Past Event</span>
         <div class="hero-content">
-            <span class="event-badge">Past Event</span>
             <img src="H4F Brandmark.png" alt="AI Hack for Freedom" class="hero-brandmark">
             <h1>AI HACK FOR FREEDOM I</h1>
             <p>Austin, Texas</p>
