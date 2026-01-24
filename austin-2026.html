@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule - AI Hack for Freedom II</title>
+    <title>AI Hack for Freedom I - Austin 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -164,19 +164,19 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        .schedule-hero {
+        .page-hero {
             background: transparent;
-            min-height: 100vh;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             position: relative;
             padding: 120px 0 60px;
             overflow: hidden;
         }
 
-        .schedule-hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -198,17 +198,40 @@
             }
         }
 
-        .schedule-header {
+        .hero-content {
             text-align: center;
-            margin-bottom: 60px;
+            color: var(--navy-blue);
+            max-width: 1000px;
+            width: 100%;
+            padding: 0 30px;
             position: relative;
             z-index: 2;
             animation: fadeInUp 1s ease-out;
         }
 
-        .schedule-header h1 {
+        .event-badge {
+            display: inline-block;
+            background: var(--navy-blue);
+            color: var(--chartreuse);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .hero-brandmark {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 8px 30px rgba(30, 58, 95, 0.35));
+        }
+
+        .hero-content h1 {
             font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2rem, 5vw, 4rem);
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.1;
@@ -216,30 +239,99 @@
             letter-spacing: -0.02em;
         }
 
-        .schedule-header p {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 500;
             color: var(--navy-blue);
-            max-width: 800px;
+        }
+
+        .hero-content .prize {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--lime-green);
+            background: var(--navy-blue);
+            padding: 8px 20px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .section-wrapper {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .section-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            height: 100%;
+            background: rgba(30, 58, 95, 0.06);
+            border-radius: 24px;
+            z-index: 0;
+        }
+
+        .section-wrapper .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 16px;
+            padding: 45px;
+            border: 3px solid var(--navy-blue);
+            box-shadow:
+                0 8px 32px rgba(30, 58, 95, 0.15),
+                0 2px 8px rgba(30, 58, 95, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--lime-green), var(--chartreuse), var(--lime-green));
+        }
+
+        .info-content {
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .info-content h2 {
+            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navy-blue);
+            margin-bottom: 25px;
+            letter-spacing: -0.01em;
+            text-align: center;
+        }
+
+        .info-content p {
+            font-size: 1.1rem;
+            color: var(--navy-blue);
+            margin-bottom: 20px;
+            line-height: 1.7;
             opacity: 0.9;
         }
 
-        .schedule-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
         .schedule-day {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.97);
             border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 40px;
+            padding: 35px;
+            margin-bottom: 25px;
             border: 3px solid var(--navy-blue);
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease-out;
             box-shadow:
                 0 8px 32px rgba(30, 58, 95, 0.15),
                 0 2px 8px rgba(30, 58, 95, 0.1);
@@ -257,25 +349,15 @@
             background: linear-gradient(90deg, var(--lime-green), var(--chartreuse), var(--lime-green));
         }
 
-        .schedule-day:hover {
-            box-shadow:
-                0 16px 48px rgba(30, 58, 95, 0.2),
-                0 4px 16px rgba(30, 58, 95, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .schedule-day h2 {
+        .schedule-day h3 {
             font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--navy-blue);
-            margin-bottom: 30px;
-            letter-spacing: -0.01em;
+            margin-bottom: 20px;
         }
 
-        .schedule-day h2 .date-number {
-            letter-spacing: 0.1em;
-            display: inline-block;
+        .schedule-day h3 .date-number {
             background: var(--navy-blue);
             color: var(--chartreuse);
             padding: 2px 12px;
@@ -283,11 +365,22 @@
             margin-left: 5px;
         }
 
+        .venue-badge {
+            display: inline-block;
+            background: var(--navy-blue);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
         .schedule-item {
             display: flex;
-            gap: 30px;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
+            gap: 25px;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
             border-bottom: 2px solid rgba(30, 58, 95, 0.1);
         }
 
@@ -304,32 +397,46 @@
             background: var(--lime-green);
             padding: 6px 12px;
             border-radius: 6px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-align: center;
             height: fit-content;
         }
 
         .schedule-description {
             flex: 1;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--navy-blue);
             line-height: 1.6;
         }
 
         .schedule-description strong {
-            color: var(--navy-blue);
             font-weight: 700;
         }
 
-        .schedule-note {
-            background: rgba(124, 179, 66, 0.15);
-            border-left: 4px solid var(--lime-green);
-            padding: 15px 20px;
-            margin-top: 20px;
-            border-radius: 4px;
-            font-size: 0.95rem;
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             color: var(--navy-blue);
-            font-style: italic;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 24px;
+            background: var(--white);
+            border: 2px solid var(--navy-blue);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .back-link:hover {
+            background: var(--navy-blue);
+            color: var(--white);
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
         }
 
         .footer {
@@ -337,12 +444,11 @@
             padding: 40px 0;
             text-align: center;
             position: relative;
-            z-index: 2;
         }
 
         .footer p {
             color: var(--white);
-            font-size: clamp(0.85rem, 2vw, 1rem);
+            font-size: 1rem;
             opacity: 0.9;
             margin: 0;
             padding: 0 20px;
@@ -401,64 +507,44 @@
                 margin-top: 10px;
             }
 
-            .navbar-content .nav-apply-btn:hover,
-            .navbar-content .nav-apply-btn:active {
-                background: var(--lime-green) !important;
-                border-color: var(--lime-green) !important;
-            }
-
             .container {
                 padding: 0 20px;
             }
 
-            .schedule-hero {
-                padding: 90px 0 40px;
+            .page-hero {
+                padding: 100px 0 50px;
                 min-height: auto;
             }
 
-            .schedule-header h1 {
-                font-size: 2.5rem;
+            .hero-content h1 {
+                font-size: 2.2rem;
             }
 
-            .schedule-header p {
+            .hero-content p {
                 font-size: 1.1rem;
             }
 
+            .section-wrapper {
+                padding: 35px 0;
+            }
+
+            .info-box,
             .schedule-day {
                 padding: 28px 22px;
-                margin-bottom: 25px;
                 border-width: 2px;
             }
 
-            .schedule-day h2 {
-                font-size: 1.6rem;
-                margin-bottom: 20px;
+            .info-content h2 {
+                font-size: 2rem;
             }
 
             .schedule-item {
                 flex-direction: column;
-                gap: 8px;
-                margin-bottom: 18px;
-                padding-bottom: 18px;
+                gap: 10px;
             }
 
             .schedule-time {
-                min-width: auto;
                 width: fit-content;
-                font-size: 0.85rem;
-                padding: 6px 14px;
-            }
-
-            .schedule-description {
-                font-size: 1rem;
-            }
-
-            .footer {
-                padding: 30px 0;
-            }
-
-            .footer p {
-                font-size: 0.9rem;
             }
         }
 
@@ -493,56 +579,47 @@
                 padding: 0 16px;
             }
 
-            .schedule-hero {
-                padding: 75px 0 30px;
+            .page-hero {
+                padding: 80px 0 40px;
             }
 
-            .schedule-header {
-                margin-bottom: 35px;
+            .hero-brandmark {
+                max-width: 150px;
             }
 
-            .schedule-header h1 {
-                font-size: 2rem;
-                margin-bottom: 12px;
+            .hero-content h1 {
+                font-size: 1.8rem;
             }
 
-            .schedule-header p {
+            .hero-content p {
                 font-size: 1rem;
             }
 
+            .section-wrapper {
+                padding: 25px 0;
+            }
+
+            .info-box,
             .schedule-day {
-                padding: 22px 18px;
-                margin-bottom: 20px;
+                padding: 22px 16px;
                 border-radius: 12px;
             }
 
-            .schedule-day::before {
-                height: 3px;
+            .info-content h2 {
+                font-size: 1.6rem;
             }
 
-            .schedule-day h2 {
+            .schedule-day h3 {
                 font-size: 1.4rem;
-                margin-bottom: 16px;
-            }
-
-            .schedule-day h2 .date-number {
-                padding: 2px 10px;
-                font-size: 1.3rem;
-            }
-
-            .schedule-item {
-                margin-bottom: 16px;
-                padding-bottom: 16px;
             }
 
             .schedule-time {
-                font-size: 0.8rem;
-                padding: 5px 12px;
+                font-size: 0.85rem;
+                padding: 5px 10px;
             }
 
             .schedule-description {
                 font-size: 0.95rem;
-                line-height: 1.5;
             }
 
             .footer {
@@ -551,22 +628,6 @@
 
             .footer p {
                 font-size: 0.85rem;
-                padding: 0 16px;
-            }
-        }
-
-        /* Extra small screens */
-        @media (max-width: 360px) {
-            .schedule-header h1 {
-                font-size: 1.7rem;
-            }
-
-            .schedule-day h2 {
-                font-size: 1.25rem;
-            }
-
-            .schedule-day {
-                padding: 18px 14px;
             }
         }
     </style>
@@ -610,116 +671,51 @@
         <div class="navbar-content" id="navbarContent">
             <a href="index.html">Home</a>
             <a href="index.html#info">Build the Future</a>
-            <a href="index.html#expect">What to Expect</a>
             <a href="index.html#how-it-works">How It Works</a>
-            <a href="austin-2026.html">History</a>
+            <a href="austin-2026.html" class="active">History</a>
             <a href="#" class="nav-apply-btn">Apply</a>
         </div>
     </nav>
 
-    <div class="schedule-hero">
+    <div class="page-hero">
+        <div class="hero-content">
+            <span class="event-badge">Past Event</span>
+            <img src="H4F Brandmark.png" alt="AI Hack for Freedom" class="hero-brandmark">
+            <h1>AI HACK FOR FREEDOM I</h1>
+            <p>Austin, Texas</p>
+            <p>January 17-18, 2026</p>
+            <span class="prize">Total Prize Pool: 1 Bitcoin</span>
+        </div>
+    </div>
+
+    <div class="section-wrapper">
         <div class="container">
-            <div class="schedule-header">
-                <h1>SCHEDULE</h1>
-                <p>Join us for an intensive weekend of building, learning, and innovation</p>
+            <div class="info-box">
+                <div class="info-content">
+                    <h2>ABOUT THE EVENT</h2>
+                    <p>AI Hack for Freedom I brought together the brightest minds in the Bitcoin and Freedom Tech community to collaborate, innovate, and build the future of decentralized technology.</p>
+                    <p>This hackathon took a unique approach—every team was led by an activist "captain" with a real-world problem to solve. Developers applied to work on activist-proposed solutions, creating meaningful impact from day one.</p>
+                    <p>The event was sponsored by the Human Rights Foundation (HRF) and hosted at Bitcoin Park Austin.</p>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <div class="schedule-content">
-                <div class="schedule-day">
-                    <h2>May <span class="date-number">8</span></h2>
-                    <div class="schedule-item">
-                        <div class="schedule-time">6:00 PM</div>
-                        <div class="schedule-description">
-                            Opening Welcome Reception at <strong>TBD</strong>.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule-day">
-                    <h2>May <span class="date-number">9</span></h2>
-                    <p style="color: var(--white); background: var(--navy-blue); font-size: 1rem; margin-bottom: 20px; font-weight: 600; padding: 8px 16px; border-radius: 6px; display: inline-block;">Bitcoin Park Nashville</p>
-                    <div class="schedule-item">
-                        <div class="schedule-time">8:00 AM</div>
-                        <div class="schedule-description">
-                            Coffee, Bagels, Snacks, Fruit.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">10:00 AM</div>
-                        <div class="schedule-description">
-                            Kickoff and ideating.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">11:00 AM</div>
-                        <div class="schedule-description">
-                            Start building.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">1:00 PM</div>
-                        <div class="schedule-description">
-                            Grab and go catered lunch (sandwiches, salads, bagels, coffee).
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">4:00 - 5:00 PM</div>
-                        <div class="schedule-description">
-                            <strong>Activists Roundtable</strong> - How can AI be used to repress.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">3:00 - 7:00 PM</div>
-                        <div class="schedule-description">
-                            <strong>Johnny Ochoa Texas BBQ</strong>.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="schedule-day">
-                    <h2>May <span class="date-number">10</span></h2>
-                    <p style="color: var(--white); background: var(--navy-blue); font-size: 1rem; margin-bottom: 20px; font-weight: 600; padding: 8px 16px; border-radius: 6px; display: inline-block;">Bitcoin Park Nashville</p>
-                    <div class="schedule-item">
-                        <div class="schedule-time">8:00 AM</div>
-                        <div class="schedule-description">
-                            Coffee, Bagels, Snacks, Fruit.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">1:00 PM</div>
-                        <div class="schedule-description">
-                            Catered lunch.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">3:00 PM</div>
-                        <div class="schedule-description">
-                            Submit projects with a Google form.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">3:30 PM</div>
-                        <div class="schedule-description">
-                            Pitches.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">4:30 PM</div>
-                        <div class="schedule-description">
-                            Judges convene.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">4:50 PM</div>
-                        <div class="schedule-description">
-                            Announce winners.
-                        </div>
-                    </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">5:15 PM</div>
-                        <div class="schedule-description">
-                            Group heads to <strong>Saturn's Cocktail Bar</strong> for social.
-                        </div>
+    <div class="section-wrapper">
+        <div class="container">
+            <div class="info-box">
+                <div class="info-content">
+                    <h2>PRIZE DISTRIBUTION</h2>
+                    <p>The 1 Bitcoin prize pool was distributed across multiple tracks:</p>
+                    <p><strong>Grand Prize:</strong> 0.5 Bitcoin</p>
+                    <p><strong>Track Prizes:</strong> 0.15-0.33 Bitcoin each, ensuring multiple teams were rewarded for exceptional work.</p>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="index.html" class="back-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            Back to AI Hack for Freedom II
+                        </a>
                     </div>
                 </div>
             </div>
@@ -728,9 +724,8 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Schedule is subject to change. Please check back for the most up-to-date version.</p>
+            <p>AI Hack for Freedom I - Austin, TX - January 2026</p>
         </div>
     </footer>
 </body>
 </html>
-
