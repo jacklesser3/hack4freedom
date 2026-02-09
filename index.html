@@ -167,9 +167,12 @@
             left: 0;
             right: 0;
             background: var(--navy-blue);
-            padding: 18px 0;
+            padding: 20px 0;
             z-index: 1000;
             border-bottom: 3px solid var(--lime-green);
+            min-height: 70px;
+            display: flex;
+            align-items: center;
         }
 
         .navbar-content {
@@ -180,7 +183,12 @@
             justify-content: center;
             align-items: center;
             gap: 40px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+        }
+
+        /* Position apply button on right when hamburger is active */
+        .nav-apply-btn-wrapper {
+            display: contents;
         }
 
         .navbar a {
@@ -784,14 +792,12 @@
             padding: 0 20px;
         }
 
-        /* Tablet styles */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 14px 0;
-            }
-
+        /* Activate hamburger menu before items get cramped */
+        @media (max-width: 1000px) {
             .hamburger {
                 display: flex;
+                left: 20px;
+                right: auto;
             }
 
             .navbar-content {
@@ -815,7 +821,8 @@
                 left: 0;
             }
 
-            .navbar-content a {
+            /* Style only nav links, not the button */
+            .navbar-content a:not(.nav-apply-btn) {
                 font-size: 1.1rem;
                 padding: 16px 30px;
                 width: 85%;
@@ -824,24 +831,25 @@
                 border-radius: 8px;
             }
 
-            .navbar-content a:hover,
-            .navbar-content a:active {
+            .navbar-content a:not(.nav-apply-btn):hover,
+            .navbar-content a:not(.nav-apply-btn):active {
                 background: rgba(255, 255, 255, 0.1);
                 border-color: var(--chartreuse);
             }
 
-            .navbar-content .nav-apply-btn {
-                background: var(--chartreuse) !important;
-                color: var(--navy-blue) !important;
-                border-color: var(--chartreuse) !important;
-                margin-top: 10px;
+            /* Keep button visible outside hamburger menu */
+            .nav-apply-btn {
+                position: fixed !important;
+                right: 20px;
+                top: 35px;
+                left: auto;
+                transform: translateY(-50%);
+                margin-top: 0;
             }
+        }
 
-            .navbar-content .nav-apply-btn:hover,
-            .navbar-content .nav-apply-btn:active {
-                background: var(--lime-green) !important;
-                border-color: var(--lime-green) !important;
-            }
+        /* Tablet styles */
+        @media (max-width: 768px) {
 
             .container {
                 padding: 0 20px;
@@ -974,12 +982,8 @@
 
         /* Mobile styles */
         @media (max-width: 480px) {
-            .navbar {
-                padding: 12px 0;
-            }
-
             .hamburger {
-                right: 16px;
+                left: 16px;
             }
 
             .hamburger span {
@@ -993,10 +997,22 @@
                 gap: 15px;
             }
 
-            .navbar-content a {
+            .navbar-content a:not(.nav-apply-btn) {
                 font-size: 1rem;
                 padding: 14px 24px;
                 width: 90%;
+            }
+
+            .nav-apply-btn {
+                right: 16px !important;
+                top: 30px !important;
+                transform: translateY(-50%) !important;
+                font-size: 0.8rem !important;
+                padding: 8px 14px !important;
+            }
+
+            .navbar {
+                min-height: 60px;
             }
 
             .container {
